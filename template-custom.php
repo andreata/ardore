@@ -12,8 +12,6 @@
   </span>
 </h1>
 
-
-
 <div class="content-103">
 	<div class="container">
 		<div class="row">
