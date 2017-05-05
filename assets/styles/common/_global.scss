@@ -1,8 +1,14 @@
 #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif; width:100%; text-align: left;}
 
+.img-post {
+      max-width: 500px;
+    height: initial;
+}
+
 .container-2 {
     background-color: rgba(130,47,140,.59);
 }
+
 
 b {
 font-weight: 1000;
@@ -13,7 +19,7 @@ footer {
 }
 
 body{
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Lato', sans-serif;
     color: #33393d;
 }
 
@@ -356,10 +362,10 @@ body {
 
 h1 span {
   padding: 0px 0;
-  background: rgba(130, 47, 140, 0.59); /* Set the lines background */
+  background: #a979b7;
   box-shadow:
-    10px 0 0 rgba(130, 47, 140, 0.59), /* Set the rows right padding  */
-    -10px 0 0 rgba(130, 47, 140, 0.59); /* Set the rows left padding */
+    10px 0 0 #a979b7, /* Set the rows right padding  */
+    -10px 0 0 #a979b7; /* Set the rows left padding */
   color: #fff;
     font-size: 55px;
     line-height: 93px;
@@ -376,7 +382,6 @@ h1 { max-width: 890px; font-weight:normal; padding: 60px 70px; }
 //services
 
 .content-103{
-
     padding-bottom:50px;
 }
 
@@ -386,8 +391,8 @@ h1 { max-width: 890px; font-weight:normal; padding: 60px 70px; }
 }
 
 .service-post {
-    color: #fff;
-    background-color: #b585bb;
+  color: #fff;
+  background-color: #b585bb;
   padding: 30px;
   text-align: center;
   cursor: pointer;
@@ -510,7 +515,7 @@ footer { background-color:#e93694; min-height:350px; font-family: 'Lato', sans-s
  .copyright { min-height:40px; background-color:#000000;}
  .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
  .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
- .post p { font-size:14px; color:#FFF; line-height:20px;}
+ .post p { font-size:14px;  line-height:20px;}
  .post p span { display:block; color:#8f8f8f;}
  .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
  .bottom_ul li { float:left; line-height:40px;}
@@ -581,4 +586,44 @@ i {
   margin-top: -10px;
   text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
   transform: translate(0, -8);
+}
+
+//contatti
+.wpcf7-form {
+  background:#fff;
+  margin-bottom:30px;
+}
+
+.wpcf7-form input {
+
+  background:#fff;
+  padding:5px 7px;
+  border:1px solid #e93694;
+  margin-bottom:8px;
+  border-radius:7px;
+}
+
+
+.wpcf7-form textarea {
+  width: 120%;
+  max-height: 160px;
+  height: 50%;
+  background:#fff;
+  padding:5px 0px 5px 7px;
+  border:1px solid #e93694;
+  border-radius:7px;
+}
+
+.wpcf7-form p {
+  color: black;
+  margin-top:10px;
+}
+
+.wpcf7-form .wpcf7-submit {
+  background:#fff;
+  cursor:pointer;
+  padding-left:15px;
+  padding-right:15px;
+  color: black;
+  border-radius:7px;
 }

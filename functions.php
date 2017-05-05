@@ -36,6 +36,51 @@ add_theme_support( 'custom-header', array(
   'flex-height'     => true,
 ) );
 
+function my_recent_post()
+ {
+  global $post;
+
+  $html = "";
+
+  $my_query = new WP_Query( array(
+       'post_type' => 'post',
+       'posts_per_page' => 4
+  ));
+
+  if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
+       $html .= <<<_EOF
+
+      <div class="col-md-6">
+_EOF;
+       $html .= "<h2>" . get_the_title() . " </h2>";
+       $html .= "<img class=\"img-post\" src=\"" . get_the_post_thumbnail() . " ";
+       $html .= "<p>" . get_the_excerpt() . "</p>";
+       $html .= "<i style=\"float: left\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i><p >" . get_the_date() . "</p>";
+       $html .= "<i style=\"float: left\" class=\"fa fa-calendar\" aria-hidden=\"true\"></i><p >" . get_the_author() . "</p>";
+       $html .= "<a href=\"" . get_permalink() . "\" class=\"btn btn-secondary\">Read more</a>";
+
+
+       $html .= <<<_EOF
+
+      </div>
+_EOF;
+
+  endwhile; wp_reset_postdata(); endif;
+
+  return $html;
+ }
+ add_shortcode( 'recent', 'my_recent_post' );
+
+
+function custom_excerpt_more($more) {
+   global $post;
+   $more_text = '';
+   return '… <a href="'. get_permalink($post->ID) . '">' . $more_text . '</a>';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
+
+
 // Aggiunta del menu Wordpress
 function register_my_menus() {
   register_nav_menus(
@@ -60,7 +105,7 @@ function my_custom_fonts() {
     }
 
   #option-tree-header {
-        background: #d2ac65;
+        background: #e93694;
       color: #fff;
       display: block;
       margin: 11px 5px 0 2px;
@@ -79,12 +124,12 @@ function my_custom_fonts() {
       border-left: 1px solid #d2ac65;
     }
     #option-tree-sub-header {
-      background: #242426;
+      background: #b585bb;
       border-radius: 2px 2px 20px 20px;
   }
 
   .wp-core-ui .button-primary {
-      background: #d2ac65;
+      background: #e93694;
       border-color: #b19053 #ab843c #ab843c;
       -webkit-box-shadow: 0 1px 0 #ab843c;
       box-shadow: 0 1px 0 #ab843c;
@@ -97,3 +142,6 @@ function my_custom_fonts() {
 
   </style>';
 }
+
+
+

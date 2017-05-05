@@ -35,7 +35,9 @@
             }, false);
           })();
 
-
+if($('body.page-template-template-landing').length >0){
+  alert('antani')
+}
 $('.counter').each(function() {
   var $this = $(this),
       countTo = $this.attr('data-count');
